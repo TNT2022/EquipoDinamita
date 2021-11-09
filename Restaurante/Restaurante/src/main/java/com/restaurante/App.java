@@ -14,6 +14,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.stage.Modality;
+import javafx.fxml.Initializable;
+
+import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+
 
 /**
  * JavaFX App
@@ -21,10 +30,11 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private static Scene modalScene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("Restaurant_Grid"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
@@ -42,4 +52,22 @@ public class App extends Application {
         launch();
     }
 
+    public static FXMLLoader getFXMLLoader(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        return fxmlLoader;
+    }
+    public static void loadFXMLModal(Parent fxmlToShow) throws IOException {
+        modalScene = new Scene(fxmlToShow, 480,480);
+        Stage modalStage = new Stage();
+        modalStage.initModality(Modality.APPLICATION_MODAL);
+        modalStage.setScene(modalScene);
+        modalStage.showAndWait();
+    }
+    
+    public static void closeForm(ActionEvent event){
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+    
 }

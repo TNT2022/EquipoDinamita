@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.restaurante.Form_RestauranteController">
+   <children>
+      <Label text="Factura de Restaurante">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="419.0">
+         <children>
+            <Label text="Codigo">
+               <padding>
+                  <Insets right="85.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txt_Codigo" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="419.0">
+         <children>
+            <Label text="Nombre Cliente">
+               <padding>
+                  <Insets right="40.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txt_NombreCli" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="558.0">
+         <children>
+            <Label text="Nombre Empleado">
+               <padding>
+                  <Insets right="25.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txt_NombreEmp" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="558.0">
+         <children>
+            <Label text="RTN">
+               <padding>
+                  <Insets right="103.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txt_RTN" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="558.0">
+         <children>
+            <Label text="Costo">
+               <opaqueInsets>
+                  <Insets right="95.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets right="95.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txt_Costo" alignment="CENTER_RIGHT" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="308.0">
+         <children>
+            <Button fx:id="Btn_Guardar" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#btnGuardar_onclick" text="Button" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="21.0" left="21.0" right="21.0" top="21.0" />
+   </padding>
+</VBox>

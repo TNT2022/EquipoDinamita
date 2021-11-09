@@ -31,7 +31,7 @@ public class RestauranteDao {
     
     public void tableInitialize(){
         String sqlCreate = "CREATE TABLE IF NOT EXISTS RESTAURANTE"
-                        + " (CODIGO INT PRIMARY KEY AUTOINCREMENT NOT NULL),"
+                        + "(CODIGO INTEGER PRIMARY KEY NOT NULL,"
                         + " NOMBRE TEXT NOT NULL,"
                         + " NOMBRE_EMP TEXT NOT NULL,"
                         + " RTN TEXT NOT NULL,"
@@ -99,7 +99,7 @@ public class RestauranteDao {
     
     public int updateRestauranteItem(Item ItemToUpdate) {
         try {
-            String SQLUpdate = "UPDATE RESTAURANTE set NOMBRE=?, NOMBRE_EMP=?, RTN?, COSTOS=? where CODIGO=?;";
+            String SQLUpdate = "UPDATE RESTAURANTE set NOMBRE=?, NOMBRE_EMP=?, RTN=?, COSTO=? where CODIGO=?;";
             PreparedStatement comando = conexion.conexion_bd().prepareStatement(SQLUpdate);
             
             comando.setString(1, ItemToUpdate.getNombre());
@@ -120,7 +120,7 @@ public class RestauranteDao {
      public int insertRestauranteItem(Item ItemToInsert) {
         try {
             //                                                                      1, 2, 3
-            String SQLInsert = "INSERT INTO ALUMNOS (CODIGO, NOMBRE, NOMBRE_EMP, RTN,COSTOS) values (?, ?, ?, ?, ?);";
+            String SQLInsert = "INSERT INTO RESTAURANTE (CODIGO, NOMBRE, NOMBRE_EMP, RTN, COSTO) values (?, ?, ?, ?, ?);";
             PreparedStatement comando = conexion.conexion_bd().prepareStatement(SQLInsert);
             
             comando.setInt(1, ItemToInsert.getCodigo()); // ? 
